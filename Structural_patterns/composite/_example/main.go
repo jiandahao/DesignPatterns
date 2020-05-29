@@ -32,4 +32,9 @@ func main() {
 	fmt.Println("=========Move dots=========")
 	comp.AddComponent(dotB)
 	comp.Move(10, 12)
+
+	// add a composite
+	newComp := composite.NewComposite()
+	newComp.AddComponent(comp)
+	newComp.Draw()
 }
