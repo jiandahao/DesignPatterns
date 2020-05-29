@@ -7,19 +7,19 @@ import "sync"
 //}
 
 type DatabaseSingleton struct {
-	mux sync.Mutex
+	mux        sync.Mutex
 	dbInstance *Database
 }
 
 type Database struct {
-	User string
+	User     string
 	Password string
 }
 
 func newDatabase() *Database {
 	return &Database{
-		User:"jiandahao",
-		Password:"1234567",
+		User:     "jiandahao",
+		Password: "1234567",
 	}
 }
 

@@ -5,7 +5,7 @@ import (
 	"github.com/jiandahao/DesignPatterns/Creational_patterns/prototype"
 )
 
-func main()  {
+func main() {
 	var protoTypeList []prototype.ProtoType
 
 	protoTypeA := &prototype.ConcreteProtoTypeA{
@@ -27,7 +27,6 @@ func main()  {
 	for _, pt := range protoTypeList {
 		fmt.Println(pt)
 	}
-
 
 	// 原型注册表实现
 	registry := prototype.Registry{}

@@ -23,8 +23,8 @@ type ProtoType interface {
 }
 
 type ConcreteProtoTypeA struct {
-	Name 	string
-	Age 	int
+	Name string
+	Age  int
 }
 
 func (p *ConcreteProtoTypeA) Clone() ProtoType {
@@ -35,7 +35,7 @@ func (p *ConcreteProtoTypeA) Clone() ProtoType {
 }
 
 type ConcreteProtoTypeB struct {
-	Nickname 	string
+	Nickname    string
 	PhoneNumber string
 }
 
@@ -52,7 +52,7 @@ type Registry struct {
 }
 
 func (r *Registry) Register(id string, protoType ProtoType) {
-	if r.items ==  nil {
+	if r.items == nil {
 		r.items = map[string]ProtoType{}
 	}
 
