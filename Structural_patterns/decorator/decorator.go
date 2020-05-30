@@ -15,14 +15,14 @@ type BaseComponent interface {
 //  Concrete Components provide default implementations of the operations. There
 //  might be several variations of these classes.
 type Buffer struct {
-	buffer 	[]byte
+	buffer []byte
 }
 
 func NewBuffer() *Buffer {
 	return &Buffer{}
 }
 
-func (m *Buffer) ReadData() []byte{
+func (m *Buffer) ReadData() []byte {
 	fmt.Println("Reading data from memory")
 	return m.buffer
 }
@@ -33,7 +33,7 @@ func (m *Buffer) WriteData(data []byte) {
 }
 
 type File struct {
-	filename 	string
+	filename string
 }
 
 func NewFile() *File {
@@ -52,11 +52,11 @@ func (f *File) WriteData(data []byte) {
 }
 
 type EncryptionDecorator struct {
-	component  BaseComponent
+	component BaseComponent
 }
 
-func NewEncryptionDecorator(component BaseComponent) *EncryptionDecorator{
-	return &EncryptionDecorator{component:component}
+func NewEncryptionDecorator(component BaseComponent) *EncryptionDecorator {
+	return &EncryptionDecorator{component: component}
 }
 
 func (d *EncryptionDecorator) ReadData() []byte {
@@ -71,16 +71,15 @@ func (d *EncryptionDecorator) WriteData(data []byte) {
 	d.component.WriteData(data)
 }
 
-
 type ValidateDecorator struct {
 	component BaseComponent
 }
 
 func NewValidateDecorator(component BaseComponent) *ValidateDecorator {
-	return &ValidateDecorator{component:component}
+	return &ValidateDecorator{component: component}
 }
 
-func (v *ValidateDecorator) ReadData() []byte{
+func (v *ValidateDecorator) ReadData() []byte {
 	data := v.component.ReadData()
 	if len(data) <= 0 {
 		fmt.Println("No data found")
@@ -98,4 +97,3 @@ func (v *ValidateDecorator) WriteData(data []byte) {
 	}
 	v.component.WriteData(data)
 }
-
