@@ -1,6 +1,6 @@
 package main
 
-import cor "github.com/jiandahao/DesignPatterns/Structural_patterns/chain-of-responsibility"
+import cor "github.com/jiandahao/DesignPatterns/Behavioral_pattern/chain-of-responsibility"
 
 func main() {
 	baseComponent := cor.NewBaseComponent()

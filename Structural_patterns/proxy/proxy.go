@@ -6,7 +6,7 @@ type ServiceInterface interface {
 	ListResource()
 }
 
-type Service struct {}
+type Service struct{}
 
 func (s *Service) ListResource() {
 	fmt.Println("list resource")
@@ -27,7 +27,7 @@ func (p *Proxy) ListResource() {
 }
 
 func NewProxy(service ServiceInterface) *Proxy {
-	return &Proxy{Service:service}
+	return &Proxy{Service: service}
 }
 
 //type ServiceManager struct {

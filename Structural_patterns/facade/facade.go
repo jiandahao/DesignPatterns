@@ -103,6 +103,7 @@ func NewVideoFileReader() *VideoFileReader {
 // 为了将框架的复杂性隐藏在一个简单接口背后，我们创建了一个外观类VideoConverter。它是在
 // 功能性和简洁性之间做出的权衡。
 type VideoConverter struct{}
+
 func (v *VideoConverter) Convert(filename string, format string) *VideoFile {
 	file := NewVideoFile(filename)
 

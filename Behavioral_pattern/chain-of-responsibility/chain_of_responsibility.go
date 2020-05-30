@@ -8,7 +8,7 @@ type Component interface {
 }
 
 type BaseComponent struct {
-	NextComponent 	Component
+	NextComponent Component
 }
 
 func (c *BaseComponent) SetNext(component Component) Component {

@@ -9,6 +9,6 @@ func main() {
 	avi := converter.Convert("demo.mp4", "avi")
 	avi.Save("./out.avi")
 
-	mp4 := converter.Convert("demo.avi","mp4")
+	mp4 := converter.Convert("demo.avi", "mp4")
 	mp4.Save("./out.mp4")
 }
