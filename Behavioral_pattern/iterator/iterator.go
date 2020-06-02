@@ -7,11 +7,11 @@ type Iterator interface {
 
 type ConcreteIterator struct {
 	collection *ConcreteIteratorCollection
-	curIndex int
+	curIndex   int
 }
 
 func (c *ConcreteIterator) HasMore() bool {
-	if c.curIndex >= len(c.collection.data){
+	if c.curIndex >= len(c.collection.data) {
 		return false
 	}
 	return true

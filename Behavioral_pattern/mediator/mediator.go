@@ -7,7 +7,7 @@ type Mediator interface {
 }
 
 type ConcreteMediator struct {
-	Button *Button
+	Button   *Button
 	CheckBox *CheckBox
 }
 
@@ -40,7 +40,7 @@ func (b *Button) Disable() {
 }
 
 func NewButton(mediator Mediator) *Button {
-	return &Button{mediator:mediator}
+	return &Button{mediator: mediator}
 }
 
 type CheckBox struct {
@@ -57,5 +57,5 @@ func (b *CheckBox) Check() {
 }
 
 func NewCheckBox(mediator Mediator) *CheckBox {
-	return &CheckBox{mediator:mediator}
+	return &CheckBox{mediator: mediator}
 }

@@ -10,7 +10,7 @@ type Command interface {
 	Execute()
 }
 
-type BaseCommand struct {}
+type BaseCommand struct{}
 
 func (cmd *BaseCommand) Execute() {
 	fmt.Println("execute base command")
@@ -20,7 +20,7 @@ type CopyCommand struct {
 	BaseCommand
 }
 
-func (cmd *CopyCommand) Execute()  {
+func (cmd *CopyCommand) Execute() {
 	fmt.Println("execute copy command")
 }
 
@@ -41,24 +41,22 @@ func (cmd *PasteCommand) Execute() {
 }
 
 func NewPasteCommand() *PasteCommand {
-	return &PasteCommand{Receiver:Receiver{}}
+	return &PasteCommand{Receiver: Receiver{}}
 }
 
 // ========== Receiver (optional)==========
-type Receiver struct {}
+type Receiver struct{}
 
 func (rcv *Receiver) Operate() {
 	fmt.Println("receiver operate")
 }
-
-
 
 // ============== Invoker ================
 type Invoker struct {
 	command map[string]Command
 }
 
-func (invoker *Invoker) SetCommand(shortCut string, command Command) error{
+func (invoker *Invoker) SetCommand(shortCut string, command Command) error {
 	if _, ok := invoker.command[shortCut]; !ok {
 		invoker.command[shortCut] = command
 	}
@@ -79,6 +77,7 @@ func (invoker *Invoker) Execute(shortCut string) {
 func NewInvoker() *Invoker {
 	return &Invoker{command: map[string]Command{}}
 }
+
 //type History struct {
 //	command []Command
 //}
